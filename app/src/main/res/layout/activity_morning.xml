@@ -51,10 +51,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="298dp"
         android:layout_marginTop="51dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,6 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:onClick="screen_Day"
         android:text="Далее >>>"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
