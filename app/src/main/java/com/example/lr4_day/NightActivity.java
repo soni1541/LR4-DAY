@@ -30,7 +30,7 @@ public class NightActivity extends AppCompatActivity {
 
                     }
                 });
-        builder.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 Intent intent = new Intent(NightActivity.this, MainActivity.class);
                 startActivity(intent);
