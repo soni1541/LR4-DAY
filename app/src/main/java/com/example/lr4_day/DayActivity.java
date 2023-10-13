@@ -5,8 +5,11 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
@@ -20,9 +23,21 @@ public class DayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day);
 
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(
+                    CHANEL_ID,
+                    "channel_1",
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        notificationManagerCompat = notificationManagerCompat.from(this);
+
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(DayActivity.this, CHANEL_ID)
-                        .setSmallIcon(R.drawable.day)
+                        .setSmallIcon(R.drawable.img)
                         .setContentTitle("Добрый день")
                         .setContentText("Скоро конец рабочего дня")
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);

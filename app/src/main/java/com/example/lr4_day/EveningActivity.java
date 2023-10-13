@@ -5,14 +5,17 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
 public class EveningActivity extends AppCompatActivity {
 
-    private static final String CHANEL_ID = "ch1"; // ID канала
+    private static final String CHANEL_ID = "ch2"; // ID канала
     private NotificationManagerCompat notificationManagerCompat; // менеджер нотификаций
 
     @Override
@@ -20,8 +23,20 @@ public class EveningActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evening);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(
+                    CHANEL_ID,
+                    "channel_2",
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        notificationManagerCompat = notificationManagerCompat.from(this);
+
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(EveningActivity.this, CHANEL_ID)
+                        .setSmallIcon(R.drawable.img_1)
                         .setContentTitle("Добрый вечер")
                         .setContentText("Пора ложиться спать")
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
