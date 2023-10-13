@@ -35,6 +35,12 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Зарядка" />
+
+        <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,6 +53,7 @@
             android:layout_height="wrap_content"
             android:text="Чистка зубов"
             android:textSize="16sp" />
+
     </LinearLayout>
 
     <ImageView
@@ -66,6 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:backgroundTint="#FFC107"
         android:onClick="screen_Day"
         android:text="Далее >>>"
         app:layout_constraintEnd_toEndOf="parent"

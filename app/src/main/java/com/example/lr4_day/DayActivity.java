@@ -22,7 +22,7 @@ public class DayActivity extends AppCompatActivity {
 
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(DayActivity.this, CHANEL_ID)
-                        .setSmallIcon(R.drawable.ic_launcher_background)
+                        .setSmallIcon(R.drawable.day)
                         .setContentTitle("Добрый день")
                         .setContentText("Скоро конец рабочего дня")
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
