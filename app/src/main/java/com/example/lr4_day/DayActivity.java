@@ -9,6 +9,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +39,9 @@ public class DayActivity extends AppCompatActivity {
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(DayActivity.this, CHANEL_ID)
                         .setSmallIcon(R.drawable.img)
+                        .setStyle(new NotificationCompat.BigPictureStyle()
+                                .bigPicture(BitmapFactory.decodeResource(getResources(),
+                                        R.drawable.img)))
                         .setContentTitle("Добрый день")
                         .setContentText("Скоро конец рабочего дня")
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);

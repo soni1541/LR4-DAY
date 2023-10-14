@@ -9,6 +9,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,9 @@ public class EveningActivity extends AppCompatActivity {
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(EveningActivity.this, CHANEL_ID)
                         .setSmallIcon(R.drawable.img_1)
+                        .setStyle(new NotificationCompat.BigPictureStyle()
+                                .bigPicture(BitmapFactory.decodeResource(getResources(),
+                                        R.drawable.img_1)))
                         .setContentTitle("Добрый вечер")
                         .setContentText("Пора ложиться спать")
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
